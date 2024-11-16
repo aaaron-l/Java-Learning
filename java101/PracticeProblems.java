@@ -28,7 +28,6 @@ public class PracticeProblems {
             for (e = 0; e < arr[i].length; e++) {
                 sum += arr[i][e];
             }
-
         }
     return sum;
     }
