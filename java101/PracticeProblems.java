@@ -21,4 +21,15 @@ public class PracticeProblems {
         }
     return str += "}";
     }
+    static int sumGrid(int[][] arr, int sum) {
+        for (int i = 0; i < arr.length; i++) {
+            sum = 0;
+            int e = 0;
+            for (e = 0; e < arr[i].length; e++) {
+                sum += arr[i][e];
+            }
+
+        }
+    return sum;
+    }
 }
