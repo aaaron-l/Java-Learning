@@ -31,4 +31,24 @@ public class PracticeProblems {
         }
     return sum;
     }
+    static int fib(int n) {
+        int startingNum1 = 0;
+        int startingNum2 = 1;
+        if (n > 1) {
+             for (int i = 2; i <= n; i++) {
+                int newNum = startingNum1 + startingNum2;
+                startingNum1 = startingNum2;
+                startingNum2 = newNum;
+
+             }
+        } else if (n == 1) {
+            startingNum2 = 1;
+        } else {
+            startingNum2 = 0;
+        }
+        return startingNum2;
+    }
+
 }
+
+
