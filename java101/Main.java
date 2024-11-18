@@ -17,6 +17,6 @@ public class Main {
         System.out.println(PracticeProblems.sumGrid(arr3));
 
 
-        System.out.println(PracticeProblems.fib(30));
+        System.out.println(PracticeProblems.fib(24));
     }
 }

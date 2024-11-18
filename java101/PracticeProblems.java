@@ -40,14 +40,13 @@ public class PracticeProblems {
                 startingNum1 = startingNum2;
                 startingNum2 = newNum;
              }
-        } else if (n == 1) {
-            startingNum2 = 1;
+
         } else {
             startingNum2 = 0;
-        }
+        }       
         return startingNum2;
-    }
-
+        }
 }
+
 
 
