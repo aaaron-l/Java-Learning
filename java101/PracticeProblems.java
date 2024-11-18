@@ -39,7 +39,6 @@ public class PracticeProblems {
                 int newNum = startingNum1 + startingNum2;
                 startingNum1 = startingNum2;
                 startingNum2 = newNum;
-
              }
         } else if (n == 1) {
             startingNum2 = 1;
