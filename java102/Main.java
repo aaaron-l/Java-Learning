@@ -29,5 +29,21 @@ public class Main {
         };
 
         System.out.println(Point.centerOfMass(pointArray));
+
+        Point angleTest1 = new Point(3, 4);
+        double angle = angleTest1.angle();
+        System.out.println(angle);
+        Point angleTest2 = new Point(-5, 10);
+        angle = angleTest2.angle();
+        System.out.println(angle);
+        Point angleTest3 = new Point(-3, -7);
+        angle = angleTest3.angle();
+        System.out.println(angle);
+        Point angleTest4 = new Point(3, -4);
+        angle = angleTest4.angle();
+        System.out.println(angle);
+        Point angleTest5 = new Point(0, 0);
+        angle = angleTest5.angle();
+        System.out.println(angle); 
     }
 }

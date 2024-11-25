@@ -43,8 +43,37 @@ public class Point {
         return new Point(avgX, avgY); 
     }   
 
-    
+    public double angle() {
+      double angleValue = 0;
+      Point point = new Point(x, y);
+      Point origin = new Point(0, 0);
+      Point xAxis = new Point(x, 0);
+      double disPointOrigin = Point.distance(point, origin);
+      double disPointxAxis = Point.distance(point, xAxis);
+      double sinePointxAxis = disPointxAxis/disPointOrigin;
+      double radDegreesSin = Math.asin(sinePointxAxis);
+      if (point.x >= 0 && point.y == 0) {
+        angleValue = 0;
+      } else if (point.x == 0 && point.y > 0) {
+        angleValue = 90;
+      } else if (point.x > 0 && point.y > 0) {
+        angleValue = Math.toDegrees(radDegreesSin); 
+      } else if (point.x < 0 && point.y > 0) {
+        angleValue = 180 - Math.toDegrees(radDegreesSin);
+      } else if (point.x < 0 && point.y == 0) {
+        angleValue = 180;
+      } else if (point.x < 0 && point.y < 0) {
+        angleValue = 270 - Math.toDegrees(radDegreesSin);
+      } else if (point.x == 0 && point.y < 0) {
+        angleValue = 270;
+      } else if (point.x > 0 && point.y < 0) {
+        angleValue = 360 - Math.toDegrees(radDegreesSin);
+      }
+      return angleValue;  
+    }
 }
+    
+
 
 
 
