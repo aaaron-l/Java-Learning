@@ -109,6 +109,12 @@ public class Main {
         Point point3 = new Point(0, 3);
 
         System.out.println(Circle.fromPoints(point1, point2, point3));
+
+        point2 = point2.translateX(-10).translateY(0.5);
+
+        RightTriangle t1 = new RightTriangle(point1, 2, 4);
+        System.out.println(t1.isInside(point2));
+
     }
 
     static double sumArea(Shape[] shapes) {
