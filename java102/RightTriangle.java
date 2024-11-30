@@ -85,7 +85,8 @@ public class RightTriangle implements Shape {
         double hypA = Point.distance(ap1, ap2);
         double hypB = Point.distance(bp1, bp2);
 
-        return Math.asin(a.leg2/hypA) == Math.asin(b.leg2/hypB);
+        return Math.asin(a.leg2/hypA) == Math.asin(b.leg2/hypB) || Math.asin(a.leg2/hypA) == Math.asin(b.leg1/hypB);
+
     }
 
     @Override

@@ -115,6 +115,31 @@ public class Main {
         RightTriangle t1 = new RightTriangle(point1, 2, 4);
         System.out.println(t1.isInside(point2));
 
+        A aa = new A(12.3, 430);
+        B bb = new B(-12.31, "hello");
+
+        aa.method1();
+        bb.method1();
+        bb.method2();
+
+        A bInDisguise = new B(1002.013, "world");
+        bInDisguise.method2();
+
+        DVD d1 = new DVD("dvd1", "2", 30.2);
+        d1.checkOut();
+        System.out.println(d1.available());
+        DVD d2 = new DVD("dvd2", "3", 20.2);
+        Book b1 = new Book("book1", "1", "author1", 300);
+        b1.checkOut();
+        Book b2 = new Book("book2", "4", "author2", 200);
+
+        LibraryItem[] items = {d1, b1, d2, b2};
+        System.out.println(Main.availableItems(items));
+        Main.returnAll(items);
+        System.out.println(items[0].available());
+        System.out.println(items[1].available());
+
+        System.out.println(Main.availableItems(items));
     }
 
     static double sumArea(Shape[] shapes) {
@@ -130,5 +155,23 @@ public class Main {
             scaled[i] = shapes[i].scale(k);
         }
         return scaled;
+    }
+
+    public static void returnAll(LibraryItem[] items) {
+        for (int i = 0; i < items.length; i++) {
+            if (items[i].isCheckedOut == true) {
+                items[i].returnItem();
+            }
+        }
+    }
+
+    public static ArrayList<LibraryItem> availableItems(LibraryItem[] items) {
+        ArrayList<LibraryItem> availItems = new ArrayList<>();
+        for (int i = 0; i < items.length; i++) {
+            if (items[i].available() == true) {
+                availItems.add(items[i]);
+            }
+        }
+        return availItems;
     }
 }
