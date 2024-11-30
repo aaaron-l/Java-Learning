@@ -67,5 +67,30 @@ public class RightTriangle implements Shape {
         }
         return isOn;
     }
+
+    public RightTriangle translate(double x, double y) {
+        return new RightTriangle(corner.translateX(x).translateY(y), leg1, leg2);
+    }
+
+    public RightTriangle scale(double k) {
+        return new RightTriangle(corner, leg1*k, leg2*k);
+    }
+
+    public static boolean similar(RightTriangle a, RightTriangle b){
+        Point ap1 = a.corner.translateX(a.leg1);
+        Point ap2 = a.corner.translateY(a.leg2);
+        Point bp1 = b.corner.translateX(b.leg1);
+        Point bp2 = b.corner.translateY(b.leg2);
+
+        double hypA = Point.distance(ap1, ap2);
+        double hypB = Point.distance(bp1, bp2);
+
+        return Math.asin(a.leg2/hypA) == Math.asin(b.leg2/hypB);
+    }
+
+    @Override
+	public String toString() {
+		return "(corner: " + corner + "; leg1: " + leg1 + "; leg2: " + leg2 + ")";
+    }
 }
 
